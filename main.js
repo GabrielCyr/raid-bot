@@ -42,5 +42,5 @@ Client.on('message', (message) => {
 		message.reply('There was an error trying to execute that command!');
 	}
 })
-
-Client.login('ODU5NDU1ODE4OTYwMDc2ODcw.YNs8mw.dkVSiSVe31lK8bpPM-psXtYD82k');
+const token = fs.readFileSync('./bot-token');
+Client.login(token.toString());

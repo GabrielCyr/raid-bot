@@ -44,7 +44,7 @@ module.exports = {
         // calculate (and subtract) whole minutes
         var minutes = Math.floor(delta / 60) % 60;
         delta -= minutes * 60;
-        if(args === aria) {
+        if(args.includes('aria')) {
             message.channel.send(
                 'There\'s only ' + days + ' days, ' + hours + ' hours and ' + minutes + ' minutes left until Aria has to stop playing Ark!');
         } else {
