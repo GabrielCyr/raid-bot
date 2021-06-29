@@ -1,0 +1,22 @@
+{
+  "name": "raid-bot",
+  "version": "1.0.0",
+  "description": "Attempt at Discord raid schedule bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielCyr/raid-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielCyr/raid-bot/issues"
+  },
+  "homepage": "https://github.com/GabrielCyr/raid-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
