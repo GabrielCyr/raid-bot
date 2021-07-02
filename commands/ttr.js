@@ -6,26 +6,26 @@ module.exports = {
         var now = new Date();
         
         var nextTuesday = new Date();
-        nextTuesday.setDate(nextTuesday.getDate() + (7 + 2 - now.getDay()) % 7);
+        nextTuesday.setDate(nextTuesday.getDate() + ((7 - nextTuesday.getDay()) %7+2) % 7);
         nextTuesday.setHours(21);
         nextTuesday.setMinutes(0);
         nextTuesday.setMilliseconds(0);
         var nextRaid = nextTuesday;
 
         var nextWednesday = new Date();
-        nextWednesday.setDate(nextWednesday.getDate() + (7 + 3 - now.getDay()) % 7);
-        nextTuesday.setHours(20);
-        nextTuesday.setMinutes(0);
-        nextTuesday.setMilliseconds(0);
+        nextWednesday.setDate(nextWednesday.getDate() + ((7 - nextWednesday.getDay())%7+3) % 7);
+        nextWednesday.setHours(20);
+        nextWednesday.setMinutes(0);
+        nextWednesday.setMilliseconds(0);
         if(Math.abs(nextRaid - now) > Math.abs(nextWednesday - now)) {
             nextRaid = nextWednesday;
         }
 
         var nextThursday = new Date();
-        nextThursday.setDate(nextThursday.getDate() + (7 + 4 - now.getDay()) % 7);
-        nextTuesday.setHours(21);
-        nextTuesday.setMinutes(0);
-        nextTuesday.setMilliseconds(0);
+        nextThursday.setDate(nextThursday.getDate() + ((7 - nextThursday.getDay())%7+4) % 7);
+        nextThursday.setHours(21);
+        nextThursday.setMinutes(0);
+        nextThursday.setMilliseconds(0);
         if(Math.abs(nextRaid - now) > Math.abs(nextThursday - now)) {
             nextRaid = nextThursday;
         }
