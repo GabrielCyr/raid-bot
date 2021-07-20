@@ -1,18 +1,16 @@
+// Include command files
 let pf = require("./commands/pf.js");
 let schedule = require("./commands/schedule.js");
 let today = require("./commands/today.js");
 let ttr = require("./commands/ttr.js");
 let ultimate = require("./commands/ultimate.js");
 
+// Discord.js things
 const Discord = require('discord.js');
 const Client = new Discord.Client();
-const fs = require('fs');
-
-// Prefix to use bot commands
-const prefix = '!';
-
 Client.commands = new Discord.Collection();
 
+// Set commands for command files
 Client.commands.set(pf.name, pf);
 Client.commands.set(schedule.name, schedule);
 Client.commands.set(today.name, today);
@@ -22,6 +20,9 @@ Client.commands.set(ultimate.name, ultimate);
 Client.once('ready', () => {
     console.log('Raid-schedule-bot is online!');
 });
+
+// Prefix to use bot commands
+const prefix = '!';
 
 // Checks messages for commands
 Client.on('message', (message) => {
@@ -48,5 +49,7 @@ Client.on('message', (message) => {
 		message.reply('There was an error trying to execute that command!');
 	}
 })
+
+const fs = require('fs');
 const token = fs.readFileSync('./bot-token');
 Client.login(token.toString());
