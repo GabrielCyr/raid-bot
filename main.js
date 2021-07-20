@@ -1,3 +1,9 @@
+let pf = require("./commands/pf.js");
+let schedule = require("./commands/schedule.js");
+let today = require("./commands/today.js");
+let ttr = require("./commands/ttr.js");
+let ultimate = require("./commands/ultimate.js");
+
 const Discord = require('discord.js');
 const Client = new Discord.Client();
 const fs = require('fs');
@@ -6,12 +12,12 @@ const fs = require('fs');
 const prefix = '!';
 
 Client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
-    Client.commands.set(command.name, command);
-}
+Client.commands.set(pf.name, pf);
+Client.commands.set(schedule.name, schedule);
+Client.commands.set(today.name, today);
+Client.commands.set(ttr.name, ttr);
+Client.commands.set(ultimate.name, ultimate);
 
 Client.once('ready', () => {
     console.log('Raid-schedule-bot is online!');

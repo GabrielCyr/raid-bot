@@ -6,6 +6,7 @@ module.exports = {
         var now = new Date();
         var day = now.toLocaleDateString('en-US', { weekday: 'long' })
         message.channel.send(
-            'Today is ' + day + '!');
+            'Today is ' + day + ', ' +
+            now.toLocaleDateString('en-US', {month: 'long'}) + ' ' + now.getDate() + '!');
     }
 }
