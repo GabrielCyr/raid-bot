@@ -7,6 +7,9 @@ module.exports = {
             message.channel.send("Please enter the name of a schedule!");
             return;
         }
+        //if(message.member.roles.find(r => r.name === "Admin") || message.member.roles.find(r => r.name === "Mod")){
+            // The rest of your code.
+        //}
         var fs = require('fs');
         try {
             const schedule = fs.readFileSync(`./schedules/${args[0]}.txt`, 'utf8');

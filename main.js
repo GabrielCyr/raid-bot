@@ -4,6 +4,7 @@ let schedule = require("./commands/schedule.js");
 let today = require("./commands/today.js");
 let ttr = require("./commands/ttr.js");
 let ultimate = require("./commands/ultimate.js");
+let upload = require("./commands/upload.js");
 
 // Discord.js things
 const Discord = require('discord.js');
@@ -16,6 +17,7 @@ Client.commands.set(schedule.name, schedule);
 Client.commands.set(today.name, today);
 Client.commands.set(ttr.name, ttr);
 Client.commands.set(ultimate.name, ultimate);
+Client.commands.set(upload.name, upload);
 
 Client.once('ready', () => {
     console.log('Raid-schedule-bot is online!');
